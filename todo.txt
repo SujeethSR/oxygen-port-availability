@@ -1,0 +1,14 @@
+step 1) python -m venv env
+
+step 2) source env/Scripts/activate or cmd env\Scripts\activate
+
+step 3) python manage.py makemigrations and python manage.py migrate
+
+step 4) python manage.py createsuperuser (for admin)
+
+above steps to be done when run for first time in new system.
+
+step 5) python manage.py runserver
+
+
+When you make model.py run these without fail python manage.py makemigrations and python manage.py migrate
