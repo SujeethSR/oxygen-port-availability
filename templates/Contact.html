@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<body>
+    
+  <!-- This example requires Tailwind CSS v2.0+ -->
+
+   <div class="hero-v1">
+      <div class="container">
+          
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-6 text-center mx-auto">
+            <span class="d-block subheading">Contact Us</span>
+            <h1 class="heading mb-3">Get In Touch</h1>
+            <p class="mb-5">
+              Let us know about your query or if you want us to support or any suggestions or information changes are all most welcomed by our managing team. 
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+<div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <form action="{% url 'contact-us' %}" method="POST">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="first_name">First name</label>
+                    <input type="text" name="first_name" id="fname" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="last_name">Last name</label>
+                    <input type="text" name="last_name" id="lname" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="first_name">Email</label>
+                    <input type="text" name="email" id="email" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="last_name">Phone No.</label>
+                    <input type="text" name="Phone_no" id="Phone_no" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject" id="subject" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" class="form-control" cols="30" rows="10" required></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <input type="submit" class="btn btn-primary" value="Send Message">
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+          <div class="col-lg-5 ml-auto">
+            <h3 class="mb-3 side-title">Quick info</h3>
+            <div class="quick-contact">
+
+              <div class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+</svg>
+                <address style="margin-left : 13px;">
+                  Fake street, 3929, London
+                </address>
+              </div>
+              <div class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 3l-6 6m0 0V4m0 5h5M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z" />
+</svg>
+                <a href="#" style="margin-left: 13px;">+1 291 2902 392</a>
+              </div>
+              <div class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20" />
+</svg>
+                <a href="#" style="margin-left: 13px;">info@mydomain.com</a>
+              </div>
+              <div class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+</svg>
+                <a href="#" style="margin-left: 13px;">https://mywebsite.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+         
+	</body>
+
+{% endblock %}  

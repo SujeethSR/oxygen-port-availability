@@ -1,0 +1,294 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+
+<body>
+
+<!-- Showcase -->
+
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Repository of Covid Centres</h1>
+      <p class="mb-8 leading-relaxed">For those who require hospitalisation, we have listed as much as possible and are continuously updating. This website may be useful but please also check government helplines.</p>
+      <div class=" w-full md:justify-start justify-center items-end">
+        <!-- <div class="relative mr-4 md:w-full lg:w-full xl:w-1/2 w-2/4">
+          <label for="hero-field" class="leading-7 text-sm text-gray-600">Enter State</label>
+          <input type="text" id="hero-field" name="state" class="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div> -->
+        <a href="{% url 'beds' %}">
+          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Serach</button>
+        </a>
+      </div>
+      <!-- <p class="text-sm mt-2 text-gray-500 mb-8 w-full">This Data Refresh In Every 30 Minutes</p> -->
+      <br>
+      <div class="flex lg:flex-row md:flex-col">
+        <a href="{% url 'donate' %}">
+          <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+      <svg  fill="currentColor" class="w-6 h-6"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="4em" height="4em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48"><path fill="#E69329" d="M11.7 21.6l5.1 9.9l9.5-3.9l4.4-12.7l-14.8.8z"/><circle fill="#546E7A" cx="15" cy="36" r="7.8"/><g fill="#90A4AE"><path d="M15 27c-5 0-9 4-9 9s4 9 9 9s9-4 9-9s-4-9-9-9zm0 16c-3.9 0-7-3.1-7-7s3.1-7 7-7s7 3.1 7 7s-3.1 7-7 7z"/><path d="M14 33h2v8h-2z"/></g><g fill="#FFB74D"><path d="M12.9 36c1 1.9 3.2 2.7 5.1 1.7l16.5-8.5c1-.5 1.7-1.2 2.2-1.9c1.7-3.2 5.6-10.7 8.2-17.2l-18.2 8.7l-4.8 7.2l-6.8 3.6c-2.6 1.3-3.4 4.2-2.2 6.4z"/><path d="M30.2 3L13.7 9.3c-.7.2-1.5 1-2.2 1.7l-5.6 7.5c-1 1.5-1.2 3.4-.5 5.1c.4 1 1.7 3.4 3.1 6.1C10.1 28 12.4 27 15 27c.4 0 .9 0 1.3.1l-2.1-4.2l4.6-4.1h8s15.5-2.2 18.2-8.7L30.2 3z"/></g><path fill="#FFCDD2" d="M18.2 36c-1.3.6-2.8 0-3.3-1.3c-.6-1.3 0-2.8 1.3-3.3c1.2-.6 3.2 4 2 4.6z"/></svg>
+              <span class="ml-4 flex items-start flex-col leading-none">
+              <span class="text-xs text-gray-600 mb-1">Help Us</span>
+              <span class="title-font font-medium text-gray-600">Donate</span>
+            </span>
+          </button>
+        </a>
+        <a href="{% url 'contact-us' %}">
+          <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-gray-200 focus:outline-none">
+          <svg   class="w-6 h-6"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M19 24H4L3.997 8.906l11.434 7.916a1 1 0 0 0 1.138 0L28 8.91V18h2V8a2.003 2.003 0 0 0-2-2H4a2.002 2.002 0 0 0-2 2v16a2.003 2.003 0 0 0 2 2h15zm6.799-16L16 14.784L6.201 8z" fill="#626262"/><circle cx="26" cy="24" r="4" fill="#626262"/></svg>
+            <span class="ml-4 flex items-start flex-col leading-none">
+              <span class="text-xs text-gray-600 mb-1">Request Us</span>
+              <span class="title-font font-medium text-gray-600">Email</span>
+            </span>
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+      <!-- <img class="object-cover object-center rounded" alt="hero" src="../static/img/720x600.png"> -->
+      <img class="object-cover object-center rounded" alt="hero" src="{% static 'img/720x600.png' %}">
+    </div>
+  </div>
+</section>
+
+<!-- Bed/Oxygen -->
+
+	 <div class="container-fluid px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+      <div class="sm:w-1/2 mb-10 px-4">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <!-- <img alt="content" class="object-cover object-center h-full w-full" src="../static/img/1201x501.PNG"> -->
+          <img alt="content" class="object-cover object-center h-full w-full" src="{% static 'img/1201x501.PNG' %}">
+        </div>
+        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">For Bed Availability</h2>
+        <p class="leading-relaxed text-base"> We Will Provide You A Bed ASAP, We Will There For You🤞 </p>
+        <a href="{% url 'beds' %}">
+          <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">
+            Search
+          </button>
+        </a>
+      </div>
+      <div class="sm:w-1/2 mb-10 px-4">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <!-- <img alt="content" class="object-cover object-center h-full w-full" src="../static/img/undraw_medical_care_movn.png"> -->
+          <img alt="content" class="object-cover object-center h-full w-full" src="{% static 'img/undraw_medical_care_movn.png' %}">
+        </div>
+        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Oxygen Availability</h2>
+        <p class="leading-relaxed text-base"> We Will Provide You A Oxygen ASAP, We Will There For You🤞</p>
+        <a href="{% url 'oxygen' %}">
+          <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">
+            Search 
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Symptoms -->
+
+	<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="text-center mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
+Covid Symptoms</h1>
+      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">*This list is not all possible symptoms. Please call your medical provider for any other symptoms that are severe or concerning to you.</p>
+    </div>
+    <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium">Fever</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium">Coughing
+</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium">Shortness of breath/Trouble breathing</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium">Fatigue</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium">Chills, sometimes with shaking
+</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium">Body aches</span>
+        </div>
+      </div>
+    </div>
+    <a href="#">
+      <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"> 
+        Find Support 
+      </button>
+    </a>
+  </div>
+</section>
+
+<!-- Symptoms-2 -->
+
+<div class="site-section bg-primary-light" id="symptoms">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-7 mx-auto text-center">
+            <h2 class="mb-4 section-heading">Symptoms of Coronavirus</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex officia quas, modi sit eligendi numquam!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="symptom d-flex">
+              <div class="img">
+                <!-- <img src="../static/img/symptom_high-fever.png" alt="Image" class="img-fluid"> -->
+                <img src=" {% static 'img/symptom_high-fever.png' %}" alt="Image" class="img-fluid">
+              </div>
+              <div class="text">
+                <h3>High Fever</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ipsum repellendus animi modi iure provident, cupiditate perferendis voluptatem!</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="symptom d-flex">
+              <div class="img">
+                <!-- <img src="../static/img/symptom_cough.png" alt="Image" class="img-fluid"> -->
+                <img src=" {% static 'img/symptom_cough.png' %}" alt="Image" class="img-fluid">
+              </div>
+              <div class="text">
+                <h3>Cough</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla ullam illo laborum repellendus vel esse dolor, sunt exercitationem.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="symptom d-flex">
+              <div class="img">
+                <!-- <img src="../static/img/symptom_sore-troath.png" alt="Image" class="img-fluid"> -->
+                <img src=" {% static 'img/symptom_sore-troath.png' %}" alt="Image" class="img-fluid">
+              </div>
+              <div class="text">
+                <h3>Sore Troath</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum esse voluptatum, vel inventore at! Ullam, libero reiciendis amet?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4">
+            <div class="symptom d-flex">
+              <div class="img">
+                <!-- <img src="../static/img/symptom_headache.png" alt="Image" class="img-fluid"> -->
+                <img src="{% static 'img/symptom_headache.png' %}" alt="Image" class="img-fluid">
+              </div>
+              <div class="text">
+                <h3>Headache</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem voluptatem ratione veniam rerum qui quibusdam reprehenderit quis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+          <div class="col-lg-10">
+            <div class="note row">
+
+              <div class="col-lg-8 mb-4 mb-lg-0"><strong>Stay at home and call your doctor:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, eaque.</div>
+              <div class="col-lg-4 text-lg-right">
+                <a href="./beds.html" class="btn btn-primary"><span class="icon-phone mr-2 mt-3"></span>Help line</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Protect Yourself -->
+
+    <section>
+      <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-7 mx-auto text-center">
+            <span class="subheading">What you need to do</span>
+            <h2 class="mb-4 section-heading">How To Protect Yourself</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex officia quas, modi sit eligendi numquam!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 ">
+            <div class="row mt-5 pt-5">
+              <div class="col-lg-6 do ">
+                <h3>You should do</h3>
+                <ul class="list-unstyled check">
+                  <li>Stay at home</li>
+                  <li>Wear mask</li>
+                  <li>Use Sanitizer</li>
+                  <li>Disinfect your home</li>
+                  <li>Wash your hands</li>
+                  <li>Frequent self-isolation</li>
+                </ul>
+              </div>
+              <div class="col-lg-6 dont ">
+                <h3>You should avoid</h3>
+                <ul class="list-unstyled cross">
+                  <li>Avoid infected people</li>
+                  <li>Avoid animals</li>
+                  <li>Avoid handshaking</li>
+                  <li>Aviod infected surfaces</li>
+                  <li>Don't touch your face</li>
+                  <li>Avoid droplets</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <!-- <img src="../static/img/protect.png" alt="Image" class="img-fluid"> -->
+            <img src="{% static 'img/protect.png' %}" alt="Image" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+</body>
+
+{% endblock %}
+
+	
+</html>
